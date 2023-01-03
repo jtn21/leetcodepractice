@@ -1,0 +1,33 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+
+ // we check to see if length is equal
+ // if it is valid anagram, length must be equal
+ // next we check for the count of each letter
+ // we do this through the use of hash maps
+ // if the amount at specific key is equal to each other then it is anagram
+var isAnagram = function(s, t) {
+     if(s.length !== t.length)
+        return false;
+    
+    const sMap = {};
+    const tMap = {};
+
+// we are iterating through the hashmap 
+// we initialize the hashmap if the letter is not currently present and we set the count at 0
+    for(let i = 0; i < s.length; i++){
+        if(!sMap[s[i]]) sMap[s[i]] = 0;
+        if(!tMap[t[i]]) tMap[t[i]] = 0;
+        sMap[s[i]]++;
+        tMap[t[i]]++;
+    }
+    for(let ch in sMap){
+        if(sMap[ch] !== tMap[ch])
+        return false
+    }
+    return true
+}
