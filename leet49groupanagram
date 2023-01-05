@@ -1,0 +1,32 @@
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+
+ // 
+ // check element to see if they are anagram
+ // if they are anagrams add them to new array
+var groupAnagrams = function(strs) {
+
+    // create new dictionary/object to store values
+    let obj = {}
+
+    //iterate through the strings
+    // split string individual characters and then sort and rejoin
+    for(let i of strs){
+        let key = i.split('').sort().join('')
+        
+    //check to see if the string is already present in the dictionary
+    // if the string is not present set the key
+    // if the string is already present add the new string to the grouping
+        if(!obj[key]) {
+            obj[key] = [i]
+        } else {
+            obj[key].push(i)
+        }
+
+    }
+    // return the values inside of the object
+    return(Object.values(obj))
+
+};
