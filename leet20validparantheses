@@ -1,0 +1,31 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+ // if length of string is odd return false
+ // go through string
+ // check element for corresponding closing paranthesis
+var isValid = function(s) {
+
+    let object = {
+        "(" : ")",
+        "[" : "]",
+        "{" : "}"
+    }
+
+    let stack = []
+
+    for(let char of s) {
+        if(object[char]){
+            stack.push(object[char])
+        } else if (stack.length > 0 && stack[stack.length -1] === char) {
+            stack.pop()
+        } else {
+            return false
+        }
+    }
+    return stack.length === 0;
+
+};
+
+console.log(isValid("() []"))
