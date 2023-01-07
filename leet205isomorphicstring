@@ -5,16 +5,25 @@
  */
 var isIsomorphic = function(s, t) {
 
+    //if the length of strings are not the same return false
     if(s.length !== t.length){
         return false;
     }
+    // create object/hashmap
     let sMap = {};
     let tMap = {};
 
+    //iterate through length of only s string
+    // we iterate through only s because both should be equal length
+    // we are setting the key of each object to the element of the string
     for(let i = 0; i< s.length; i++){
         let sKey = s[i];
         let tKey = t[i];
 
+    // if the value at the key is undefined, meaning that it is not present
+    // initialize the value at that key to match the letter of opposite string at the position
+    // if they values at the keys at the same position are not the same
+    // we can return false
         if(sMap[sKey] == undefined){
             sMap[sKey] = tKey;
         }
@@ -29,3 +38,5 @@ var isIsomorphic = function(s, t) {
     return true;
 
 };
+
+console.log(isIsomorphic("egg","add"))
