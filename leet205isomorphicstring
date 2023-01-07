@@ -1,0 +1,31 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isIsomorphic = function(s, t) {
+
+    if(s.length !== t.length){
+        return false;
+    }
+    let sMap = {};
+    let tMap = {};
+
+    for(let i = 0; i< s.length; i++){
+        let sKey = s[i];
+        let tKey = t[i];
+
+        if(sMap[sKey] == undefined){
+            sMap[sKey] = tKey;
+        }
+        if(tMap[tKey] == undefined){
+            tMap[tKey] = sKey;
+        }
+        if(sMap[sKey] != tKey || tMap[tKey] != sKey){
+            return false;
+        }
+
+    }
+    return true;
+
+};
