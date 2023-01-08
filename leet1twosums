@@ -4,17 +4,35 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    let temp = [];
-    for(let i = 0; i < nums.length; i++){
-        for(let j = i + 1; j < nums.length; j++){
-            if (nums[i] + nums[j] == target) {
-                temp.push([i])
-                temp.push([j])
-            }
-            else {
-                continue;
-            }
+    // let temp = [];
+    // for(let i = 0; i < nums.length; i++){
+    //     for(let j = i + 1; j < nums.length; j++){
+    //         if (nums[i] + nums[j] == target) {
+    //             temp.push([i])
+    //             temp.push([j])
+    //         }
+    //         else {
+    //             continue;
+    //         }
+    //     }
+    // }
+    // return temp;
+
+
+    //solution with hashmap
+    // create storage
+    //iterate through the array
+    //check to see if the number is already present in hashmap
+    // if not we can assign a value/index to the key/element
+    let map = {}
+
+    for(let i =0; i< nums.length; i++){
+        let complement = target - nums[i]
+        if(complement in map){
+            return [i, map[complement]]
         }
+            map[nums[i]] = i;
     }
-    return temp;
+
+
 };
