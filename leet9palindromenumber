@@ -1,0 +1,49 @@
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+
+// look left to right
+// reverse number
+// compare reverse to original
+
+// find midpoint by dividing input into two
+// reverse second half
+// use two pointers to compare
+// compare first half to reversed second half
+// if first half equals the second half
+// return true
+// if not return false
+//
+var isPalindrome = function(x) {
+  let num = x.toString();
+  let midpoint = Math.floor(num.length/2)
+  
+//   if(num.length == 1){
+//       return true;
+//   }
+  
+//   for (let i = 0; i < midpoint; i++){
+      
+//         if (num[i] != (num[num.length - 1])) {
+//             return false;
+//             } return true;
+//     } 
+  
+  if(num.length == 1){
+      return true;
+  }
+    
+    let right = 0;
+    let left = num.length - 1
+    
+    while(left > right){
+        if(num[right] != num[left]){
+            return false;
+        } else{
+            right++
+            left--
+        } 
+    } return true;
+
+};
