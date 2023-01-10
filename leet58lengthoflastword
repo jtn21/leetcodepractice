@@ -1,0 +1,63 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+    //check if string contains a word
+    //check by seeing if spot contains a space
+    //if it is a space we move on
+    //if not a space we place element into array
+    // let temp = []
+    // for(let i = s.length-1; i > 0; i--){
+    //     if(s[i] != " "){
+    //         console.log("this is added" + s[i])
+    //         temp.push(s[i]);
+    //         console.log("this is temp" + temp)
+    //         console.log("this is i" + i)
+    //     } else if (s[i-1] && s[i] == " "){
+    //         break;
+    //     }
+    // } return temp.length
+    // let temp = []
+    // if(s.length === 1) {
+    //   return s.length;
+    // }
+    // for(let i  = s.length-1; i > 0; i--) {
+    //     if(s[i] == " "){
+    //         continue;
+    //     } else if(s[i -1] == " " && s[i] != " " ) {
+    //         temp.push(s[i])
+    //         break;
+    //     } else if(s[i] != " ") {
+    //         temp.push(s[i])
+    //     }
+    // } return temp.length;
+
+
+    //split the individual words in string into indiviual elements
+    // find the last element
+    // find the length of the last element
+    // return the length
+
+    let splitString = s.split(" ")
+    let newArray = []   
+
+    for(let i = splitString.length - 1; i >= 0; i--){
+
+        if(splitString[i] != "" && i == splitString.length - 1){
+            newArray.push(splitString[i])
+            newArray.length;
+            console.log(newArray[0].length)
+        } else if (splitString[i] == "" || splitString[i-1] == ""){
+            newArray.push(splitString[i])
+            newArray.pop()
+        } else if(splitString[i-1] != "" && splitString[i+1]== ""){
+            newArray.push(splitString[i])
+        }
+    } return newArray[0].length;
+
+    
+
+
+};
+console.log(lengthOfLastWord("   fly me   to   the moon  "))
