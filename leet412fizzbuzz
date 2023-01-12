@@ -1,0 +1,25 @@
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+var fizzBuzz = function(n) {
+    // initiate loop
+    // if i divided by 3 and 5 print fizzbuzz
+    // if i divided by 3 print fizz
+    // if i divided by 5 print buzz
+    // if none of the conditions return i
+    let temp = [];
+    for(let i = 1; i <= n; i++){
+        let num = i;
+        if(i%3 !== 0 && i%5 !==0) {
+            temp.push(num.toString())
+        }else if (i%3 === 0 && i%5 ===0) {
+            temp.push("FizzBuzz")
+        }else if (i%3 === 0) {
+            temp.push("Fizz")
+        }else {
+            temp.push("Buzz")
+        }
+    }
+    return temp;
+};
