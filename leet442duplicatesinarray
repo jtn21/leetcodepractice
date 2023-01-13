@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+
+ // we can sort elements in array
+ // if two elements are equal, we can push that number into array
+var findDuplicates = function(nums) {
+    let double = [];
+    const sorted = nums.sort();
+    
+    for(let i = 0; i < sorted.length; i++ ){
+        if(sorted[i] == sorted[i+1]){
+            double.push(sorted[i]);
+            i = i+1;
+        }
+    }
+    return double;
+};
