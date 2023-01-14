@@ -1,0 +1,26 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+
+ // find the length of array
+ // array elements should conain nmbers from 1 - array length
+//  sort the numbers
+// once sorted check to see if present numbers
+// if not present add present num to new array; c
+var findDisappearedNumbers = function(nums) {
+    let missingNums = [];
+    let range = nums.length;
+    let presentNum = 1;
+
+    console.log(nums.indexOf(presentNum))
+
+    for(let i = 0; i <= range; i++){
+        if(nums.indexOf(i) == -1 && i != 0){
+            missingNums.push(i)
+        } else{
+            continue
+        }
+    }
+    return missingNums;
+};
