@@ -1,0 +1,60 @@
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+
+// 2 ^ 0 = 1
+// 2 ^ 1 = 2
+// 2 ^ 2 = 4
+// 2 ^ 3 = 8 -> n = 8 / 3 -> 2 r 2
+// 2 ^ 4 = 16 -> n = 16 / 4 -> 4 r 0
+// 2 ^ 5 = 32 -> n = 32 / 5 = 6 r 2
+
+// 6
+// 12
+// 14
+// 20
+// 22
+
+// 24
+// 24/2 -> 12/2 -> 6/2 -> 3 
+
+// numbers divided by 4 are powers of two
+// exception to this is 1 and 2
+// check if numbers are divsible by 4 evenly
+// if not, return false
+
+// if target divided by 2 end result is odd number
+// return false
+
+var isPowerOfTwo = function(n) {
+    
+//     let result = n/2
+
+//     if( n == 1 || n == 2 ){
+//         return true
+//     } else if(result % 2 != 0){
+//         return false;
+//     } else {
+//         isPowerOfTwo(result);
+//     } 
+    
+
+    
+  if ( n < 1) {
+    return false
+    }
+    while (n > 1) {
+      if(n%2 !== 0) {
+        return false
+        }
+        n = n/2
+      }
+      return true;
+    
+
+
+    
+    
+};
+console.log(isPowerOfTwo(12))
