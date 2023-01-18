@@ -1,0 +1,33 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortedSquares = function(nums) {
+    //go through array
+    // square each element
+    // push into new array
+    // sort the elements
+    //if decreasing move down
+    // if increasing move up
+    let temp =[];
+    let currentNum = 0;
+    let leftNum = 0;
+    let rightNum = 0;
+
+    for(let i = 0; i < nums.length; i++){
+        nums[i] = Math.pow(nums[i],2);
+        temp.push(nums[i]);
+    }
+    for(let j = 0; j < temp.length; j++) {
+        currentNum = temp[j];
+        if(currentNum < leftNum){
+            leftNum = currentNum
+        } else if (currentNum < rightNum) {
+            rightNum = currentNum
+        } else {
+            continue;
+        }
+    }
+    
+    return temp;
+};
