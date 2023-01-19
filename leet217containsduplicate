@@ -1,0 +1,34 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+
+// look at first element
+// search through array for a match to element
+// if a match return true
+// no match return false
+// we can search at both ends
+// if match at ends we can return true
+// if no match we can increase one pointer
+// we can keep a count
+// create a temp array
+// push number into array
+// if match count +1
+// if no match move on to next and reset count to 0
+var containsDuplicate = function(nums) {
+
+    //creating the memory to contain instance
+    const memory = {};
+
+    
+    for(let i = 0; i < nums.length; i++){
+        let currentValue = nums[i];
+        if(memory[currentValue] == undefined){
+            memory[currentValue] = currentValue;
+        }else {
+            return true;
+        }
+    }
+    return false;
+
+};
