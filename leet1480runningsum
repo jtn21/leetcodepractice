@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var runningSum = function(nums) {
+    let temp = [];
+    let currentSum = 0;
+    let runningSum = 0;
+    for(let i = 0; i<nums.length; i++){
+        if(i < 1){
+            runningSum = nums[0];
+            temp.push(runningSum)
+            currentSum = runningSum;
+        }else{
+            runningSum = currentSum + nums[i];
+            temp.push(runningSum);
+            currentSum = runningSum;
+        }
+    }
+    return temp;
+};
