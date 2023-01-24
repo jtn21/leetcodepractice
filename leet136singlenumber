@@ -1,0 +1,30 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+
+ //  we can sort the array
+ // iterate through array
+ // check to see if the number ahead equals current number
+ // if number ahead does not equal number before or number after
+ // return that number
+var singleNumber = function(nums) {
+
+let sortedNums = nums.sort();
+
+
+
+for(let i = 0; i < sortedNums.length; i++){
+    if(sortedNums.length == 1){
+        return sortedNums
+    } else if(sortedNums[i] !== sortedNums[i+1] && sortedNums[i] !== sortedNums[i-1] ){
+        return sortedNums[i]
+    }else{
+        continue;
+    }
+}
+
+
+
+    
+};
