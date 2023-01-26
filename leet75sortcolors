@@ -1,0 +1,26 @@
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+ // use a bubble sort
+ // iterate through the array
+ // if first number larger than next number
+ // swap places
+ // if number is less than next number
+ // move on
+ // if number is same
+ // move on
+var sortColors = function(nums) {
+    for(let i = 0; i < nums.length; i++){
+        for(let j = 0; j < nums.length; j++){
+            if(nums[j] > nums[j+1]){
+                let temp = nums[j]
+                nums[j] = nums[j+1]
+                nums[j+1] = temp;
+            } else {
+                continue;
+            }
+        }
+    }
+    return nums
+};
