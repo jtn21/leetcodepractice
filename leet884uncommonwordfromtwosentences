@@ -1,0 +1,40 @@
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {string[]}
+ */
+
+ // convert string into array
+ // iterate through both arrays
+ // if element in one array is found in other array
+ // push that into new array
+ // return the array
+var uncommonFromSentences = function(s1, s2) {
+ let one = s1.split(" ")
+ let two = s2.split(" ")
+ let temp = []
+ let count = 0
+
+
+//  for(let i = 0; i < one.length; i++){
+//      if(two.indexOf(one[i]) == -1 && temp.indexOf(one[i]) == -1){
+//          temp.push(one[i])
+//      } else if (temp.indexOf(one[i]) != -1){
+//          temp.splice(temp.indexOf(one[i]))
+//      }
+//  }
+
+//  for(let j = 0; j < two.length; j++){
+//      if(one.indexOf(two[j]) == -1 && temp.indexOf(two[j]) == -1){
+//          temp.push(two[j])
+//      } else if (temp.indexOf(two[j]) != -1){
+//          temp.pop(temp.indexOf(two[j]))
+//      }
+//  }
+//  return temp;
+
+
+
+};
+
+console.log(uncommonFromSentences("mqk g g","uuz rk uuz"))
