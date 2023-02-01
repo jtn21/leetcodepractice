@@ -1,0 +1,26 @@
+function selectionSort(nums) {
+    let length = nums.length;
+
+    for (let i = 0; i < length; i++) {
+        // find smallest number
+        // min will hold the smallest index number that we will be working with since beginning of array is going to become sorted as we go through
+        let min = i;
+        
+        for (let j = i+1; j < length; j++) {
+            // check which is smaller
+            if (nums[j] < nums[min]) {
+              // if the j locaiton is smaller, set min equal to j since that is where the smallest number is
+                min = j;
+            }
+        }
+        // if the smallest value isn't already at the position of i, we can swap, otherwise leave it because it's in correct locaiton already
+        if (min != i) {
+            // swap the values
+            let temp = nums[i];
+            nums[i] = nums[min];
+            nums[min] = temp;
+        }
+    }
+    // return sorted array
+    return nums
+}
