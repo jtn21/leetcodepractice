@@ -6,9 +6,16 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
 function insertionSort(nums) {
+
+  // use a for loop to iterate through the array
     let n = nums.length
     for(let i = 1;i < n; i++ ) {
       
+  // we set a current variable to the element
+  // we set j equal to the element before i
+  // while the current element is greater than number to left and less than number to right
+  // we swap the position of number to the right with current number
+  //decement j so that it doesnt repeat or skip numbers    
       let current = nums[i];
       let j = i-1;
       while ((j > -1) && (current < nums[j])) {
