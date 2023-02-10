@@ -1,0 +1,33 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+
+ //search the array
+ //if target number present in array
+ // return index 
+ // if not present
+ // iterate through array
+ // if first element smaller than target
+ // move on
+ // if next element is bigger
+ // target must go in that position before the next element
+var searchInsert = function(nums, target) {
+    let left = 0;
+    let right = nums.length - 1;
+
+
+    while(left <= right){
+        let mid = Math.floor((left + right) / 2)
+
+        if(nums[mid] == target){
+            return mid
+        } else if(nums[mid] < target){
+            left = mid + 1
+        } else{
+            right = mid - 1
+        }
+    }return left;
+
+};
