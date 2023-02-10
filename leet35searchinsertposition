@@ -14,13 +14,19 @@
  // if next element is bigger
  // target must go in that position before the next element
 var searchInsert = function(nums, target) {
+
+//setting upper and lower bound
     let left = 0;
     let right = nums.length - 1;
 
-
+// while the lower bound is smaller than or equal to the upper bound this while loop will proceed
+// we use math floor to round any half numbers to a whole number
     while(left <= right){
         let mid = Math.floor((left + right) / 2)
 
+
+//we increase the lower bound by 1 if the target is bigger than the middle number so that we are only looking at top half and vice versa
+//if nothing is found we return the lower bound because we have found where the number should be 
         if(nums[mid] == target){
             return mid
         } else if(nums[mid] < target){
