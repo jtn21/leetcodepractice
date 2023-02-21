@@ -1,0 +1,25 @@
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+
+ //use two pointers
+ //create a temporary array
+ //we can use target number and subtract first element from it
+ //we can then search array for the difference
+ //if difference is present
+ //we can return both the first element and the element that is the difference
+ //if the diffrence is not present move on to next element
+ //repeat
+var twoSum = function(numbers, target) {
+    let temp = [];
+    for(let i = 0; i < numbers.length; i++){
+        let difference = target - numbers[i];
+        if(numbers.indexOf(difference) != null){
+            temp.push(i + 1)
+            temp.push(numbers.indexOf(difference) + 1)
+            return temp
+        } 
+    }
+};
