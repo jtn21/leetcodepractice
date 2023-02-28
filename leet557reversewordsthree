@@ -1,0 +1,28 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
+
+ //turn each word into individual elements in an array
+ //go through each element
+ //each element we can use two pointers to swap letters
+ // once swapped
+ // we can move on to next element
+var reverseWords = function(s) {
+    let temp = s.split(" ")
+    console.log(temp)
+        for(let i = 0; i < temp.length; i++){
+            let current = temp[i];
+            let left = 0;
+            let right = current.length - 1;
+            while(left < right){
+                let holder = current[left];
+                current[left] = current[right];
+                current[right] = holder;
+                left++;
+                right--;
+            }
+        }
+        return temp;
+
+};
