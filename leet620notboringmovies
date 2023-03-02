@@ -1,0 +1,4 @@
+SELECT * FROM cinema c
+WHERE c.id mod 2 > 0 
+AND c.description not IN ('boring')
+ORDER BY c.rating DESC
