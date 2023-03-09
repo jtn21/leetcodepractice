@@ -12,26 +12,51 @@
 
 var romanToInt = function(s) {
 
-const romanNum = {
-    "I" : 1,
-    "V" : 5,
-    "X" : 10,
-    "L" : 50,
-    "C" : 100,
-    "D" : 500,
-    "M" : 1000
-    };
+// const romanNum = {
+//     "I" : 1,
+//     "V" : 5,
+//     "X" : 10,
+//     "L" : 50,
+//     "C" : 100,
+//     "D" : 500,
+//     "M" : 1000
+//     };
 
-    let num = 0;
-    for(let i = 0; i < s.length; i++){
-        let key = s[i]
-        if(s[i] == "I" && s[i+1] == "V" || s[i+1] == X){
-            num += romanNum[key +1] - romanNum[key]
-        }
-        num += romanNum[key];
+//     let num = 0;
+//     for(let i = 0; i < s.length; i++){
+//         let key = s[i]
+//         if(s[i] == "I" && s[i+1] == "V" || s[i+1] == X){
+//             num += romanNum[key +1] - romanNum[key]
+//         }
+//         num += romanNum[key];
+//     }
+//     return num;
+
+const romanToInt = s => {
+    if (!s || s.length === 0) {
+      return 0;
     }
-    return num;
-
+  
+    const map = new Map([['I', 1], ['V', 5], ['X', 10], ['L', 50], ['C', 100], ['D', 500], ['M', 1000]]);
+  
+    let i = s.length - 1;
+    let result = map.get(s[i]);
+  
+    while (i > 0) {
+      const curr = map.get(s[i]);
+      const prev = map.get(s[i - 1]);
+  
+      if (prev >= curr) {
+        result += prev;
+      } else {
+        result -= prev;
+      }
+  
+      i--;
+    }
+  
+    return result;
+  };
 
 
 
