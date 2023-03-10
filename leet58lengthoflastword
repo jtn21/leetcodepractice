@@ -39,23 +39,35 @@ var lengthOfLastWord = function(s) {
     // find the length of the last element
     // return the length
 
-    let splitString = s.split(" ")
-    let newArray = []   
+    // let splitString = s.split(" ")
+    // let newArray = []   
 
-    for(let i = splitString.length - 1; i >= 0; i--){
+    // for(let i = splitString.length - 1; i >= 0; i--){
 
-        if(splitString[i] != "" && i == splitString.length - 1){
-            newArray.push(splitString[i])
-            newArray.length;
-            console.log(newArray[0].length)
-        } else if (splitString[i] == "" || splitString[i-1] == ""){
-            newArray.push(splitString[i])
-            newArray.pop()
-        } else if(splitString[i-1] != "" && splitString[i+1]== ""){
-            newArray.push(splitString[i])
+    //     if(splitString[i] != "" && i == splitString.length - 1){
+    //         newArray.push(splitString[i])
+    //         newArray.length;
+    //         console.log(newArray[0].length)
+    //     } else if (splitString[i] == "" || splitString[i-1] == ""){
+    //         newArray.push(splitString[i])
+    //         newArray.pop()
+    //     } else if(splitString[i-1] != "" && splitString[i+1]== ""){
+    //         newArray.push(splitString[i])
+    //     }
+    // } return newArray[0].length;
+
+    let lastWordCount = 0;
+     for(let i = s.length -1; i >= 0; i--){
+        if (s[i] != " "){
+            for(let j = i; j >= 0; j--){
+                if(s[j] !== " "){
+                    lastWordCount++;
+                } else{
+                    return lastWordCount
+                }
+            }
         }
-    } return newArray[0].length;
-
+     }
     
 
 
