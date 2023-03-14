@@ -6,11 +6,34 @@
 var search = function(nums, target) {
     //search through array for element
     // if element is found, return the index
-    // if element not found, return -
-    for(let i = 0; i< nums.length; i++){
-        if(nums[i] === target){
-            return i
-        }
+    // if element not found, return -1
+
+    // for(let i = 0; i< nums.length; i++){
+    //     if(nums[i] === target){
+    //         return i
+    //     }
+    // }
+    // return -1
+
+    //we can use two pointers
+    //left pointer starts at beginning of array
+    //right pointer starts at end of array
+    //if the target is smaller than middle number
+    //we can start at the left half of array
+    //if the target is larger than middle number
+    //we can start at right half of array
+    //keep decreasing until we get target number
+    let left = 0;
+    let right = nums.length -1
+    while(left <= right){
+        let mid = Math.floor((left + right)/2)
+        if(nums[mid] === target){
+            return mid
+        }else if(nums[mid] > target){
+            right = mid - 1
+        }else{
+            left = mid + 1
+        }return -1
     }
-    return -1
+
 };
