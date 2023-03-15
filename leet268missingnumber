@@ -1,0 +1,14 @@
+var missingNumber = function(nums) {
+    let sum = 0;
+    let max = 0;
+    let zeroExist = false;
+    for(let num of nums) {
+        sum += num;
+        max = Math.max(max, num);
+        if(!zeroExist && num==0) {
+            zeroExist = true;
+        }
+    }
+    let missingNum = (1+max)*max/2-sum;
+    return zeroExist ? (missingNum || max+1) : 0;
+};
