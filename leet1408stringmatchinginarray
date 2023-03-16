@@ -1,20 +1,14 @@
 var stringMatching = function(words) {
-    if(words.length <= 1) return []
-    let output = {}
-    let arr = words
-    
-    for (let i = 0; i < words.length; i++) {
-        
-        for(let j = 0; j < arr.length; j++) {
-            if(i == j) continue
-            
-            if (words[i].includes(arr[j])) {
-                output[arr[j]] = 1
-                continue
+
+    let temp = [];
+    words.sort((a,b) => a.length - b.length)
+
+    for (let i = 0; i < words.length;i++){
+        for(let j = 1; j < words.lengtj;j++){
+            if(words[j].includes(words[i])){
+                temp.push(words[j]);
+                break;
             }
         }
     }
-    
-    
-    return Object.keys(output)
 };
