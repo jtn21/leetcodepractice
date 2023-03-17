@@ -1,5 +1,6 @@
 var stringMatching = function(words) {
-
+//we sort because it is helpful to arrange by length
+//makes it easier to fit in
     let temp = [];
     words.sort((a,b) => a.length - b.length)
 
